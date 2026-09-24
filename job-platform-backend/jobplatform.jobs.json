@@ -1,0 +1,108 @@
+[{
+  "_id": {
+    "$oid": "6a2925cb0697727d54e37851"
+  },
+  "post": "Web developer",
+  "about": "tdyrsefgkhl",
+  "no_of_vacancies": "4",
+  "requirements": "Degree",
+  "exp_required": "2",
+  "provider_id": {
+    "$oid": "6a290471be74705ce4f434cb"
+  },
+  "from_date": "2026-09-23",
+  "due_date": "2026-09-24",
+  "salary": "0",
+  "status": "approve",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa2c6251d74ae0bf1d0699"
+  },
+  "post": "Accountant",
+  "about": "Handing accounts",
+  "no_of_vacancies": "1",
+  "requirements": "Degree",
+  "exp_required": "3",
+  "provider_id": {
+    "$oid": "6a290471be74705ce4f434cb"
+  },
+  "from_date": "2026-09-16",
+  "due_date": "2026-09-24",
+  "salary": "0",
+  "status": "approve",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa3b4251d74ae0bf1d0705"
+  },
+  "post": "Data Analytics",
+  "about": "Knowledge in Machine learning  ",
+  "no_of_vacancies": "2",
+  "requirements": "MSc in Data Science or IT",
+  "exp_required": "2",
+  "provider_id": {
+    "$oid": "6aaa38fa51d74ae0bf1d06e6"
+  },
+  "from_date": "2026-09-16",
+  "due_date": "2026-09-24",
+  "salary": "0",
+  "status": "approve",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab3fb7d443360efb270a5b2"
+  },
+  "post": "Production Manager",
+  "about": "A production manager is responsible for coordinating and controlling the manufacturing process to ensure efficient, safe, and cost‑effective production. They manage schedules, equipment, staff, and quality standards to meet output targets",
+  "no_of_vacancies": "2",
+  "requirements": "Any degree",
+  "exp_required": "5",
+  "provider_id": {
+    "$oid": "6a290471be74705ce4f434cb"
+  },
+  "from_date": "2026-09-23",
+  "due_date": "2026-09-30",
+  "salary": "0",
+  "status": "pending",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab3fd76443360efb270a5c6"
+  },
+  "post": "MERN stack developer",
+  "about": "The person should know MERN",
+  "no_of_vacancies": "2",
+  "requirements": "Degree",
+  "exp_required": "3",
+  "provider_id": {
+    "$oid": "6aaa38fa51d74ae0bf1d06e6"
+  },
+  "from_date": "2026-09-24",
+  "due_date": "2026-10-01",
+  "salary": "0",
+  "status": "approve",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab52b24c3156f94cc7a51dc"
+  },
+  "post": "Accountant",
+  "about": "Accounting",
+  "no_of_vacancies": "3",
+  "requirements": "Degree",
+  "exp_required": "3",
+  "provider_id": {
+    "$oid": "6ab52aacc3156f94cc7a51d0"
+  },
+  "from_date": "2026-09-24",
+  "due_date": "2026-10-01",
+  "salary": "0",
+  "status": "approve",
+  "__v": 0
+}]

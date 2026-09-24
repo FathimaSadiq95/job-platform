@@ -1,0 +1,265 @@
+[{
+  "_id": {
+    "$oid": "6847e6c9e24be4123ae48e2e"
+  },
+  "username": "provider@gmail.com",
+  "password": "provider123",
+  "usertype": "provider"
+},
+{
+  "_id": {
+    "$oid": "6847e775e24be4123ae48e2f"
+  },
+  "username": "seeker@gmail.com",
+  "password": "seeker123",
+  "usertype": "seeker"
+},
+{
+  "_id": {
+    "$oid": "685123f680d324c6ddd6d29d"
+  },
+  "username": "a",
+  "password": "b",
+  "usertype": "pending"
+},
+{
+  "_id": {
+    "$oid": "685cfe7bef98433d90699872"
+  },
+  "username": "revathi@gmail.com",
+  "password": "revathi123",
+  "usertype": "pending",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d0896a2820f16153ec9b7"
+  },
+  "username": "email",
+  "password": "ramu123",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d09e9a2820f16153ec9ba"
+  },
+  "username": "email",
+  "password": "ramu123",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d0b6ea2820f16153ec9bd"
+  },
+  "username": "email",
+  "password": "ramu123",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d0b9745ec4da7a0680d23"
+  },
+  "username": "email",
+  "password": "ramu123",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d0cdf81ac010ac86d50ad"
+  },
+  "username": "email",
+  "password": "98765",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d0eba36badfb8288da7e6"
+  },
+  "username": "RAJU@GMAIL.COM",
+  "password": "RAJU123",
+  "usertype": "pending",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d104d457ac77ae751f61c"
+  },
+  "username": "RAJU@GMAIL.COM",
+  "password": "raju123",
+  "usertype": "seeker",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d10e1457ac77ae751f61f"
+  },
+  "username": "RAJU@GMAIL.COM",
+  "password": "RAJU123",
+  "usertype": "seeker",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68aed0f85fe66fcaaae3e640"
+  },
+  "username": "admin",
+  "password": "admin",
+  "usertype": "admin"
+},
+{
+  "_id": {
+    "$oid": "68b01e6075d9b5617b1b6abf"
+  },
+  "username": "kadeeja@gmail.cm",
+  "password": "kadeeja123",
+  "usertype": "approve"
+},
+{
+  "_id": {
+    "$oid": "68b29ea261fa97920a899c4a"
+  },
+  "username": "faseehsadiq@gmail.com",
+  "password": "Fathima123",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b2a04761fa97920a899c4e"
+  },
+  "username": "amazone@gmail.com",
+  "password": "athira123",
+  "usertype": "reject",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b2a17d2be38e0165f3d265"
+  },
+  "username": "tcl@gmail.org",
+  "password": "shalini123",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69490da8418cde25f95f2321"
+  },
+  "username": "tcl@gmail.org",
+  "password": "Siddika123",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69490f48418cde25f95f232c"
+  },
+  "username": "ashiq@gmail.com",
+  "password": "Ashiq123",
+  "usertype": "seeker",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2662c5f7f224a428502e69"
+  },
+  "username": "seeker@gmail.com",
+  "password": "seeker@123",
+  "usertype": "seeker",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2667d9f7f224a428502e6d"
+  },
+  "username": "seeker@gmail.com",
+  "password": "Seeker@12",
+  "usertype": "seeker",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2668b3f7f224a428502e71"
+  },
+  "username": "seeker@gmail.com",
+  "password": "Seeker@123",
+  "usertype": "seeker",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a290471be74705ce4f434c9"
+  },
+  "username": "provider2@gmail.com",
+  "password": "provider123",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa37a651d74ae0bf1d06de"
+  },
+  "username": "swathi@gmail.com",
+  "password": "Swathi123",
+  "usertype": "seeker",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa38fa51d74ae0bf1d06e4"
+  },
+  "username": "rizz@gmail.com",
+  "password": "riss@1234",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab3f80c443360efb270a59e"
+  },
+  "username": "krishnaPriya@gmail.com",
+  "password": "krishna@123",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4a9c10372759ed5437509"
+  },
+  "username": "aleena@gmai",
+  "password": "Aleena@123",
+  "usertype": "pending",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4aa910372759ed5437511"
+  },
+  "username": "aleena@gmai",
+  "password": "Aleena@123",
+  "usertype": "seeker",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab52aacc3156f94cc7a51ce"
+  },
+  "username": "fathima1995@gmail.com",
+  "password": "Fathima@123",
+  "usertype": "provider",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab52b9ec3156f94cc7a51e3"
+  },
+  "username": "aleena123@gmai",
+  "password": "aleena@123",
+  "usertype": "seeker",
+  "__v": 0
+}]

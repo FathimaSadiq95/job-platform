@@ -1,0 +1,176 @@
+[{
+  "_id": {
+    "$oid": "68b29ea261fa97920a899c4c"
+  },
+  "name": "Fathima Sadique",
+  "position": "COO",
+  "organisation": "Restwell wood Industries",
+  "aboutorganisation": "We are a manufacturing company of Plywood",
+  "aboutyou": "COO of our Plywood Manufacturing Company ",
+  "images": "C:\\fakepath\\plywood-MERN.jpg",
+  "location": "Azhikkal ,Kannur",
+  "website": "https://miro.medium.com/v2/resize:fit:1358/0*-JXy20cIm0Mt26Is.JPG",
+  "date": "Sat Aug 30 2025 12:18:02 GMT+0530 (India Standard Time)",
+  "email": "faseehsadiq@gmail.com",
+  "phone": "9746444601",
+  "profile_photo": "https://img.freepik.com/premium-photo/business-executive-woman_841014-8677.jpg?w=2000",
+  "address": "Sabiras",
+  "login_id": {
+    "$oid": "68b29ea261fa97920a899c4a"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b2a04761fa97920a899c50"
+  },
+  "name": "Athira M O",
+  "position": "Digital Marketing Head",
+  "organisation": "Amazone",
+  "aboutorganisation": "Amazone",
+  "aboutyou": "I am Head of the Digital Marketing Section of our Company",
+  "images": "C:\\fakepath\\amazone-mern.jpg",
+  "location": "California, USA",
+  "website": "https://www.amazon.in/",
+  "date": "Sat Aug 30 2025 12:25:03 GMT+0530 (India Standard Time)",
+  "email": "amazone@gmail.com",
+  "phone": "8987635176",
+  "profile_photo": "https://img.freepik.com/premium-photo/executive-women-business-attire-office_976599-5335.jpg?w=2000",
+  "address": "Amzone , California",
+  "login_id": {
+    "$oid": "68b2a04761fa97920a899c4e"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b2a17d2be38e0165f3d267"
+  },
+  "name": "Shalini Pavitran",
+  "position": "Logistic Head",
+  "organisation": "TCL",
+  "aboutorganisation": "TCL is a initiative of 4 friends ",
+  "aboutyou": "I am Logistic head of the organization",
+  "images": "C:\\fakepath\\amazone-mern.jpg",
+  "location": "Dubai",
+  "website": "https://www.tcl.com/gulf/en",
+  "date": "Sat Aug 30 2025 12:30:13 GMT+0530 (India Standard Time)",
+  "email": "tcl@gmail.org",
+  "phone": "9809818989",
+  "profile_photo": "https://img.freepik.com/premium-photo/business-executive-woman_841014-8636.jpg",
+  "address": "TCL , Dubai , UAE",
+  "login_id": {
+    "$oid": "68b2a17d2be38e0165f3d265"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69490da8418cde25f95f2323"
+  },
+  "name": "Sidikka",
+  "position": "Logistic Head",
+  "organisation": "TCL",
+  "aboutorganisation": "rgykmbxk nfio",
+  "aboutyou": "whhjkjgj gnlmogiu",
+  "images": "C:\\fakepath\\EX-1A-1.png",
+  "location": "Dubai",
+  "website": "https://www.tcl.com/gulf/en",
+  "date": "Mon Dec 22 2025 14:51:44 GMT+0530 (India Standard Time)",
+  "email": "tcl@gmail.org",
+  "phone": "987076453",
+  "profile_photo": "https://img.freepik.com/premium-photo/business-executive-woman_841014-8636.jpg",
+  "address": "TCL , Dubai , UAE",
+  "login_id": {
+    "$oid": "69490da8418cde25f95f2321"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a290471be74705ce4f434cb"
+  },
+  "name": "Faseeh Sadique",
+  "position": "CEO",
+  "organisation": "Salis Business Group",
+  "aboutorganisation": "about org",
+  "aboutyou": "about",
+  "images": "/uploads/1790180093473-799464945.webp",
+  "location": "location",
+  "website": "https://www.bing.com/search?pglt=43&q=SALIS+ICE+PLANT&cvid=81c4f008464946d2af623c12deddfa8b&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOdIBCDkyNTVqMGo3qAIIsAIB&FORM=ANSPA1&PC=U531",
+  "date": "Wed Jun 10 2026 12:00:09 GMT+0530 (India Standard Time)",
+  "email": "provider2@gmail.com",
+  "phone": "0987654321",
+  "profile_photo": "/uploads/1790180093476-579147478.jpg",
+  "address": "address123456789",
+  "login_id": {
+    "$oid": "6a290471be74705ce4f434c9"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa38fa51d74ae0bf1d06e6"
+  },
+  "name": "Azharudheen",
+  "position": "Managing Director",
+  "organisation": "RISS",
+  "aboutorganisation": "Web development company",
+  "aboutyou": "Successfully completed 10 years of Full stack development carrier. ",
+  "images": "/uploads/1790180645314-866465988.jpg",
+  "location": "Kannur",
+  "website": "https://www.riztechnology.com/",
+  "date": "Wed Sep 16 2026 12:06:42 GMT+0530 (India Standard Time)",
+  "email": "rizz@gmail.com",
+  "phone": "3580909709",
+  "profile_photo": "/uploads/1790180645315-845327445.jpg",
+  "address": "Kannur",
+  "login_id": {
+    "$oid": "6aaa38fa51d74ae0bf1d06e4"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab3f80c443360efb270a5a0"
+  },
+  "name": "Krishna Priya",
+  "position": "Human Resource Manager",
+  "organisation": "Hubha Beauty",
+  "aboutorganisation": "We are well known for beauty products with 13 years of experience. We have a large production unit for various makeup products.  ",
+  "aboutyou": "It been 10 years i am working for this organization, and it's been 3 year i am HR of the company. ",
+  "images": "/uploads/1790179340782-451817161.jpg",
+  "location": "Kannur",
+  "website": "https://hudabeauty.com/en-us",
+  "date": "Wed Sep 23 2026 21:32:20 GMT+0530 (India Standard Time)",
+  "email": "krishnaPriya@gmail.com",
+  "phone": "8909818989",
+  "profile_photo": "/uploads/1790179340766-712394673.jpg",
+  "address": "Kannur",
+  "login_id": {
+    "$oid": "6ab3f80c443360efb270a59e"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab52aacc3156f94cc7a51d0"
+  },
+  "name": "Fathima Sadique",
+  "position": "Managing Director",
+  "organisation": "Google",
+  "aboutorganisation": "dfkjbuiio",
+  "aboutyou": "uyiubkj",
+  "images": "/uploads/1790257836272-585944575.webp",
+  "location": "Kannur",
+  "website": "https://hudabeauty.com/en-us",
+  "date": "Thu Sep 24 2026 19:20:36 GMT+0530 (India Standard Time)",
+  "email": "fathima1995@gmail.com",
+  "phone": "5037141734",
+  "profile_photo": "/uploads/1790257836259-91248155.jpg",
+  "address": "FARWANIYA ,BLOCK NO. 6, STREET NO. 3",
+  "login_id": {
+    "$oid": "6ab52aacc3156f94cc7a51ce"
+  },
+  "__v": 0
+}]

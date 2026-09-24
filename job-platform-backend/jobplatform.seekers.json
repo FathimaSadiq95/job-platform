@@ -1,0 +1,142 @@
+[{
+  "_id": {
+    "$oid": "6847e9bce24be4123ae48e33"
+  },
+  "name": "seeker_name",
+  "cv": "seeker_cv",
+  "link": "seeker_link",
+  "email": "seeker@gmail.com",
+  "date": "date",
+  "dateofbirth": "seeker_DOB",
+  "profilephoto": "profile_photo",
+  "phone": "123456789",
+  "login_id": {
+    "$oid": "6847e775e24be4123ae48e2f"
+  },
+  "about": "about_seeker"
+},
+{
+  "_id": {
+    "$oid": "685d10e1457ac77ae751f621"
+  },
+  "name": "RAJU",
+  "dateofbirth": "12/12/1995",
+  "cv": "C:\\fakepath\\images-2.avif",
+  "profilephoto": "C:\\fakepath\\images-1.webp",
+  "link": "http://localhost:3000/Sendregisterseeker",
+  "about": "hcghxj,VMB",
+  "email": "RAJU@GMAIL.COM",
+  "phone": "12344974",
+  "date": "Thu Jun 26 2025 14:50:33 GMT+0530 (India Standard Time)",
+  "login_id": {
+    "$oid": "685d10e1457ac77ae751f61f"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b01d0475d9b5617b1b6abc"
+  },
+  "name": "Kadeeja",
+  "dateofbirth": "15/08/1996",
+  "cv": "CV",
+  "profilephoto": "photo",
+  "link": "http://theworld.com",
+  "about": "about Kadeeja",
+  "date": "21/06/2025",
+  "email": "kadeeja@gmail.com",
+  "login_id": {
+    "$oid": "6847e775e24be4123ae48e2f"
+  },
+  "phone": "9809818989"
+},
+{
+  "_id": {
+    "$oid": "69490f48418cde25f95f232e"
+  },
+  "name": "Ashiqh",
+  "dateofbirth": "26/09/2000",
+  "cv": "C:\\fakepath\\EX-1A-1.png",
+  "profilephoto": "C:\\fakepath\\EX-1A-2.png",
+  "link": "http://localhost:3000/Sendregisterseeker",
+  "about": "huyjolihd bgiokq7j jiik",
+  "email": "ashiq@gmail.com",
+  "phone": "3457829175",
+  "date": "Mon Dec 22 2025 14:58:40 GMT+0530 (India Standard Time)",
+  "login_id": {
+    "$oid": "69490f48418cde25f95f232c"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2668b3f7f224a428502e73"
+  },
+  "name": "Seekertest Fathima",
+  "dateofbirth": "2003-07-03",
+  "cv": "C:\\fakepath\\functionalDependancy.png",
+  "profilephoto": "C:\\fakepath\\Fathima (1).jpg",
+  "link": "https://www.bing.com/",
+  "about": "About Seeker",
+  "email": "seeker@gmail.com",
+  "phone": "1234497412",
+  "date": "Mon Jun 08 2026 12:31:07 GMT+0530 (India Standard Time)",
+  "login_id": {
+    "$oid": "6a2668b3f7f224a428502e71"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaa37a651d74ae0bf1d06e0"
+  },
+  "name": "Swathi Pedugu",
+  "dateofbirth": "2002-12-02",
+  "cv": "C:\\fakepath\\OIP.webp",
+  "profilephoto": "C:\\fakepath\\swathi.jpg",
+  "link": "http://localhost:3000/Sendregisterseeker",
+  "about": "about swathi",
+  "email": "swathi@gmail.com",
+  "phone": "9999555577",
+  "date": "Wed Sep 16 2026 12:01:02 GMT+0530 (India Standard Time)",
+  "login_id": {
+    "$oid": "6aaa37a651d74ae0bf1d06de"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4aa910372759ed5437513"
+  },
+  "name": "Aleena Parveen",
+  "dateofbirth": "2001-01-19",
+  "cv": "/uploads/1790225041286-269095759.pdf",
+  "profilephoto": "/uploads/1790225041288-975425831.jpg",
+  "link": "https://www.bing.com/",
+  "about": "I have 10 years of experience in Marketing",
+  "email": "aleena@gmai",
+  "phone": "8797356690",
+  "date": "Thu Sep 24 2026 10:14:01 GMT+0530 (India Standard Time)",
+  "login_id": {
+    "$oid": "6ab4aa910372759ed5437511"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab52b9ec3156f94cc7a51e5"
+  },
+  "name": "Aleena Parveennnnnnnnnnnnn",
+  "dateofbirth": "2001-01-19",
+  "cv": "/uploads/1790258078565-50634808.pdf",
+  "profilephoto": "/uploads/1790258078566-314508413.jpg",
+  "link": "https://www.bing.com/",
+  "about": "I am aleena ",
+  "email": "aleena123@gmai",
+  "phone": "8797356690",
+  "date": "Thu Sep 24 2026 19:24:38 GMT+0530 (India Standard Time)",
+  "login_id": {
+    "$oid": "6ab52b9ec3156f94cc7a51e3"
+  },
+  "__v": 0
+}]
