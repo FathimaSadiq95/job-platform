@@ -36,7 +36,7 @@ const Viewjob = () => {
   const handleReject = async (id) => {
     setSelectedJob(null);
     try {
-      await axios.get(`http://localhost:4000/rejectJob/${id}`);
+      await axios.get(`${API_URL}/rejectJob/${id}`);
       setSelectedJob(null);
       window.location.href = "/Viewjob";
     } catch (error) {

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
+import API_URL from "../../api";
 
 
 const Viewloginfeedbackseeker = () => {
@@ -12,7 +13,7 @@ const Viewloginfeedbackseeker = () => {
   useEffect(() => {
     const getFeedback = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/Viewfeedbackseeker");
+        const response = await axios.get(`${API_URL}/Viewfeedbackseeker`);
         console.log("feedback data", response.data.data);
         setFeedbackData(response.data.data);
       } catch (error) {

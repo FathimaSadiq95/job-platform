@@ -1,3 +1,4 @@
+
 export const normalizeImageUrl = (imagePath) => {
   if (!imagePath || typeof imagePath !== 'string') return '';
 
@@ -10,5 +11,5 @@ export const normalizeImageUrl = (imagePath) => {
 
   if (trimmed.startsWith('http')) return trimmed;
 
-  return `http://localhost:4000/${trimmed.replace(/^\/+/, '')}`;
+  return `${API_URL}/${trimmed.replace(/^\/+/, '')}`;
 };

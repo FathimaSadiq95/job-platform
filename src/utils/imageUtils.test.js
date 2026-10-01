@@ -1,4 +1,5 @@
 import { normalizeImageUrl } from './imageUtils';
+import API_URL from '../api';
 
 describe('normalizeImageUrl', () => {
   test('returns empty for browser fakepath values', () => {
@@ -6,6 +7,6 @@ describe('normalizeImageUrl', () => {
   });
 
   test('builds backend URL for uploaded server paths', () => {
-    expect(normalizeImageUrl('/uploads/abc.jpg')).toBe('http://localhost:4000/uploads/abc.jpg');
+    expect(normalizeImageUrl('/uploads/abc.jpg')).toBe(`${API_URL}/uploads/abc.jpg`);
   });
 });

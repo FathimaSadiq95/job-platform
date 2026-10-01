@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios";
 import Header from "../LOGIN/Header";
 import Footer from "../LOGIN/Footer";
+import API_URL from "../../api";
  const Login=()=>
 
   {
@@ -19,12 +20,11 @@ import Footer from "../LOGIN/Footer";
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post('http://localhost:4000/login',serviceData);
-          console.log(response.data,'sssssssssssssssss');
-          if(response.data.status == 'ok')
-          {
-          var id = response.data.id;
-          var uid = response.data.uid;
+          const response = await axios.post(`${API_URL}/login`, serviceData);
+          console.log(response.data, 'sssssssssssssssss');
+          if (response.data.status == 'ok') {
+            var id = response.data.id;
+            var uid = response.data.uid;
            localStorage.setItem('id', id);
            localStorage.setItem('type', response.data.type);
            localStorage.setItem('uid', uid);

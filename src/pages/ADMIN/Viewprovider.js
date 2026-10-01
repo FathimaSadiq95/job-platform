@@ -24,7 +24,7 @@ const Viewprovider = () => {
   const handleApprove = async (id) => {
     setSelectedProvider(null)
   try {
-    await axios.get(`http://localhost:4000/approveProvider/${id}`);
+    await axios.get(`${API_URL}/approveProvider/${id}`);
         setSelectedProvider(null)
         window.location.href='/Viewprovider';
 
@@ -36,7 +36,7 @@ const Viewprovider = () => {
     alert('Hiiiiiiiiiiiiiiiiiiii')
     setSelectedProvider(null)
   try {
-    await axios.get(`http://localhost:4000/rejectProvider/${id}`);
+    await axios.get(`${API_URL}/rejectProvider/${id}`);
         setSelectedProvider(null)
         window.location.href = '/Viewprovider'
 
