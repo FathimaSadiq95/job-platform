@@ -1,4 +1,4 @@
-
+import API_URL from "../api";
 export const normalizeImageUrl = (imagePath) => {
   if (!imagePath || typeof imagePath !== 'string') return '';
 
