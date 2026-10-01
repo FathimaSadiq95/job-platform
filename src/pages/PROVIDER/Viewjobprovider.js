@@ -2,6 +2,7 @@ import { useState ,useEffect} from "react";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
+import API_URL from "../../api";
 const Viewjobprovider=()=>
 {
   const[jobData, setjobData ] = useState([]);
@@ -9,7 +10,7 @@ const Viewjobprovider=()=>
  useEffect(() => {
           const getService = async() => {
               try{
-                  const response = await axios.get(`http://localhost:4000/Viewjob/${localStorage.getItem("uid")}`);
+                  const response = await axios.get(`${API_URL}/Viewjob/${localStorage.getItem("uid")}`);
                   console.log('jobview',response.data.data)
                   setjobData(response.data.data);
               }
@@ -22,7 +23,7 @@ const Viewjobprovider=()=>
 
  const deleteJob = async (id) => {
   try {
-    await axios.get(`http://localhost:4000/Deletejob/${id}`);
+    await axios.get(`${API_URL}/Deletejob/${id}`);
     window.location.href = "/Viewjobprovider";
   } catch (error) {
     console.error("Error deleting job:", error);

@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 
 const Viewapplicationprovider = () => {
   const [applicationData, setApplicationData] = useState([]);
@@ -12,7 +13,7 @@ const Viewapplicationprovider = () => {
   useEffect(() => {
     const getService = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/Viewapplicationprovider/${localStorage.getItem("uid")}`);
+        const response = await axios.get(`${API_URL}/Viewapplicationprovider/${localStorage.getItem("uid")}`);
         setApplicationData(response.data.data);
       } catch (error) {
         console.error(error);
@@ -24,7 +25,7 @@ const Viewapplicationprovider = () => {
   const handleSelect = async (id) => {
     setSelectedApplication(null);
     try {
-      await axios.get(`http://localhost:4000/selectApplication/${id}`);
+      await axios.get(`${API_URL}/selectApplication/${id}`);
       setApplicationData((applications) => applications.filter((application) => application._id !== id));
       setSelectedApplication(null);
     } catch (error) {
@@ -35,7 +36,7 @@ const Viewapplicationprovider = () => {
   const handleReject = async (id) => {
     setSelectedApplication(null);
     try {
-      await axios.get(`http://localhost:4000/rejectApplication/${id}`);
+      await axios.get(`${API_URL}/rejectApplication/${id}`);
       setApplicationData((applications) => applications.filter((application) => application._id !== id));
       setSelectedApplication(null);
     } catch (error) {

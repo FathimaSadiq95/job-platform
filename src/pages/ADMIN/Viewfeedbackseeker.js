@@ -1,68 +1,9 @@
-// import { useState,useEffect } from  'react';
-// import axios from 'axios';
-// import Header from "./Header";
-// import Footer from "./Footer";
-// const Viewfeedbackseeker = () =>
-// {
-//   const[feedbackData, setfeedbackData ] = useState([]);
-    
-//         useEffect(() => {
-//             const getService = async() => {
-//                 try{
-//                     const response = await axios.get('http://localhost:4000/Viewfeedbackseeker');
-//                     console.log('feedbackview',response.data.data)
-//                     setfeedbackData(response.data.data);
-//                 }
-//                 catch(error){
-//                     console.error(error);
-//                 }
-//             };
-//             getService();
-//         }, []); 
-//   return(<>
-//   <Header/>
-//   <form id="form1" name="form1" method="post" action="">
-//   <table width="520" border="1">
-//     <tr>
-//       <th width="12" scope="row">#</th>
-//       <td width="66">FEED-BACK</td>
-//       <td width="60">DATE</td>
-//       <td width="70">NAME</td>
-//       <td width="78">PHOTO</td>
-//       <td width="94">PHONE</td>
-//       <td width="94">EMAIL</td>
-//     </tr>
-//     {
-//       feedbackData.map((feedback,index)=>(
-//       <tr>
-//       <td>&nbsp;{index+1}</td>
-//       <td>&nbsp;{feedback.feed_back}</td>
-//       <td>&nbsp;{feedback.date}</td>
-//       <td>&nbsp;{feedback.sdata.name}</td>
-//       <td>&nbsp;{feedback.sdata.profilephoto}</td>
-//       <td>&nbsp;{feedback.sdata.phone}</td>
-//       <td>&nbsp;{feedback.sdata.email}</td>
-//     </tr>
-//       )
-//     )
-// }
-    
-//   </table>
-// </form>
-// <Footer/>
-//   </>);
-    
-// }
-
-// export default Viewfeedbackseeker;
-
-
-
 
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
+import API_URL from "../../api";
 
 const Viewfeedbackseeker = () => {
   const [feedbackData, setFeedbackData] = useState([]);
@@ -71,7 +12,7 @@ const Viewfeedbackseeker = () => {
   useEffect(() => {
     const getFeedback = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/Viewfeedbackseeker");
+        const response = await axios.get(`${API_URL}/Viewfeedbackseeker`);
         console.log("feedback data", response.data.data);
         setFeedbackData(response.data.data);
       } catch (error) {

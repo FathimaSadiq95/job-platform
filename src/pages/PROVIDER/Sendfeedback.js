@@ -2,6 +2,7 @@ import {useState} from  'react';
 import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
+import API_URL from '../../api';
 const Sendfeedback=()=>
 {
     const[serviceData,setserviceData]=useState({
@@ -19,7 +20,7 @@ const Sendfeedback=()=>
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/Sendfeedback/'+localStorage.getItem('uid'),serviceData)
+        axios.post(`${API_URL}/Sendfeedback/${localStorage.getItem('uid')}`, serviceData)
         console.log(serviceData);
         alert('Service Added Successfully!!')
         resetForm();

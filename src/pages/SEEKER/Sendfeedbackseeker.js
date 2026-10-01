@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
+import API_URL from "../../api";
 const Sendfeedbackseeker=()=>
 {
 
@@ -21,7 +22,7 @@ const Sendfeedbackseeker=()=>
     const handleSubmit = async (e) => {
         e.preventDefault();
       try {
-        await axios.post('http://localhost:4000/Sendfeedbackseeker/'+localStorage.getItem("uid"), serviceData);
+        await axios.post(`${API_URL}/Sendfeedbackseeker/${localStorage.getItem("uid")}`, serviceData);
         alert('Feedback sent successfully!');
         resetForm();
         window.location.href='/Sendfeedbackseeker#next';

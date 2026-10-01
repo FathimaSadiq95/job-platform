@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 const SeekerHome=()=>
 {
   const [jobData, setJobData] = useState([]);
@@ -10,7 +11,7 @@ const SeekerHome=()=>
   useEffect(() => {
     const getJobs = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/ViewApprovedJob");
+        const response = await axios.get(`${API_URL}/ViewApprovedJob`);
         setJobData(response.data.data || []);
       } catch (error) {
         console.error("Error loading approved jobs:", error);
@@ -22,7 +23,7 @@ const SeekerHome=()=>
 
   const applyForJob = async (id) => {
     try {
-      await axios.get(`http://localhost:4000/applyForJob/${id}/${localStorage.getItem("uid")}`);
+      await axios.get(`${API_URL}/applyForJob/${id}/${localStorage.getItem("uid")}`);
       setJobData((currentJobs) => currentJobs.map((job) => (
         job._id === id ? { ...job, isApplied: true } : job
       )));

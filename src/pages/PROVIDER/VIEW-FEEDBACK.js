@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import Header from "./Header";
 import Footer from "./Footer";
+import API_URL from '../../api';
 const Viewfeedback=()=>
 {
    const[feedbackData, setfeedbackData ] = useState([]);
           useEffect(() => {
               const getService = async() => {
                   try{
-                      const response = await axios.get('http://localhost:4000/Viewfeedbackprovider');
+                      const response = await axios.get(`${API_URL}/Viewfeedbackprovider`);
                       console.log('feedbackview',response.data.data)
                       setfeedbackData(response.data.data);
                   }

@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 
 const Viewjobseeker = ()=>{
 
@@ -11,7 +12,7 @@ const Viewjobseeker = ()=>{
  useEffect(() => {
           const getService = async() => {
               try{
-                  const response = await axios.get('http://localhost:4000/ViewApprovedJob');
+                  const response = await axios.get(`${API_URL}/ViewApprovedJob`);
                   console.log('jobviewseeker',response.data.data)
                   setjobData((response.data.data || []).map((job) => ({
                     ...job,
@@ -27,7 +28,7 @@ const Viewjobseeker = ()=>{
 
  const applyForJob = async (id) => {
   try {
-   const response = await axios.get(`http://localhost:4000/applyForJob/${id}/${localStorage.getItem("uid")}`); 
+   const response = await axios.get(`${API_URL}/applyForJob/${id}/${localStorage.getItem("uid")}`); 
       console.log('Apply response:', response.data);
       setjobData((currentJobs) => currentJobs.map((job) => (
         job._id === id ? { ...job, isApplied: true } : job

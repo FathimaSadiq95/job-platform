@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 
 const Viewseeker = () => {
   const [seekerData, setSeekerData] = useState([]);
@@ -12,7 +13,7 @@ const Viewseeker = () => {
   useEffect(() => {
     const getService = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/Viewseeker");
+        const response = await axios.get(`${API_URL}/Viewseeker`);
         setSeekerData(response.data.data);
       } catch (error) {
         console.error(error);
@@ -24,7 +25,7 @@ const Viewseeker = () => {
   const handleApprove = async (id) => {
     setSelectedSeeker(null);
     try {
-      await axios.get(`http://localhost:4000/approveSeeker/${id}`);
+      await axios.get(`${API_URL}/approveSeeker/${id}`);
       alert("Seeker approved successfully.");
       window.location.href = "/Viewseeker"; // refresh
     } catch (error) {
@@ -35,7 +36,7 @@ const Viewseeker = () => {
   const handleReject = async (id) => {
     setSelectedSeeker(null);
     try {
-      await axios.get(`http://localhost:4000/rejectSeeker/${id}`);
+      await axios.get(`${API_URL}/rejectSeeker/${id}`);
       alert("Seeker rejected successfully.");
       window.location.href = "/Viewseeker"; // refresh
     } catch (error) {

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
+import API_URL from '../../api';
 const Sendregisterjob=()=>
 {
   const today = new Date();
@@ -32,7 +33,7 @@ const Sendregisterjob=()=>
     const handleSubmit = (e) => {
         const id = localStorage.getItem("uid");
         e.preventDefault();
-        axios.post('http://localhost:4000/Sendregisterjob/' + id,serviceData)
+        axios.post(`${API_URL}/Sendregisterjob/${id}`, serviceData)
         console.log(serviceData);
         alert('Service Added Successfully!!')
         resetForm();

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
  const Header=()=>
 
 {
@@ -20,7 +21,7 @@ import { normalizeImageUrl } from "../../utils/imageUtils";
       try {
         for (const seekerId of seekerIds) {
           try {
-            const response = await axios.get(`http://localhost:4000/getseekerdata/${seekerId}`);
+            const response = await axios.get(`${API_URL}/getseekerdata/${seekerId}`);
             if (response.data) {
               setSeekerProfile(response.data);
               break;

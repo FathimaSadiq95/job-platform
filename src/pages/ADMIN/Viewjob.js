@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 
 const Viewjob = () => {
   const [jobData, setJobData] = useState([]);
@@ -12,7 +13,7 @@ const Viewjob = () => {
   useEffect(() => {
     const getService = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/ViewjobAdmin");
+        const response = await axios.get(`${API_URL}/ViewjobAdmin`);
         setJobData(response.data.data);
       } catch (error) {
         console.error(error);
@@ -24,7 +25,7 @@ const Viewjob = () => {
   const handleApprove = async (id) => {
     setSelectedJob(null);
     try {
-      await axios.get(`http://localhost:4000/approveJob/${id}`);
+      await axios.get(`${API_URL}/approveJob/${id}`);
       setSelectedJob(null);
       window.location.href = "/Viewjob";
     } catch (error) {

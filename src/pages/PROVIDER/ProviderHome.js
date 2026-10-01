@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";    
 
 const ProviderHome= ()=>
 {
@@ -11,7 +12,7 @@ const ProviderHome= ()=>
   useEffect(() => {
     const getJobs = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/ViewApprovedJob");
+        const response = await axios.get(`${API_URL}/ViewApprovedJob`);
         setJobData(response.data.data || []);
       } catch (error) {
         console.error("Error loading approved jobs:", error);

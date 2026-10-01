@@ -2,6 +2,7 @@ import { useState , useEffect} from "react";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
+import API_URL from "../../api";
 
 const Viewloginprovider =()=>{
    const[providerData, setproviderData ] = useState([]);
@@ -9,7 +10,7 @@ const Viewloginprovider =()=>{
             useEffect(() => {
                 const getService = async() => {
                     try{
-                        const response = await axios.get('http://localhost:4000/Viewapprovedprovider');
+                        const response = await axios.get(`${API_URL}/Viewapprovedprovider`);
                         console.log('approved provider',response.data.data)
                         setproviderData(response.data.data);
                     }

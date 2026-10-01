@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
+import API_URL from '../../api';
 
 const Sendupdateprovider = () => {
   const [serviceData, setServiceData] = useState({
@@ -28,7 +29,7 @@ const Sendupdateprovider = () => {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/getproviderdata/${id}`);
+        const response = await axios.get(`${API_URL}/getproviderdata/${id}`);
         if (response.data) {
           setServiceData(response.data);
           setProfilePreview(response.data.profile_photo || '');
@@ -69,7 +70,7 @@ const Sendupdateprovider = () => {
       }
     });
 
-    await axios.post(`http://localhost:4000/Sendupdateprovider/${id}`, formData, {
+    await axios.post(`${API_URL}/Sendupdateprovider/${id}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' }
     });
 
@@ -80,7 +81,7 @@ const Sendupdateprovider = () => {
   const normalizeDisplayUrl = (path) => {
     if (!path) return '';
     if (path.startsWith('http')) return path;
-    return `http://localhost:4000/${path.replace(/^\//, '')}`;
+    return `${API_URL}/${path.replace(/^\//, '')}`;
   };
 
   return (
@@ -103,96 +104,6 @@ const Sendupdateprovider = () => {
           </form>
         </div></div></div></div>
       </section>
-      {/* Existing preview markup retained below for compatibility. */}
-      {/* <form onSubmit={handleSubmit} encType="multipart/form-data">
-          <table width="588" height="526" border="1">
-          <tbody>
-            <tr>
-              <th scope="row">NAME</th>
-              <td>
-                <input type="text" name="name" id="textfield" value={serviceData.name} onChange={handleChange} />
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">POST</th>
-              <td>
-                <input type="text" name="position" id="textfield2" value={serviceData.position} onChange={handleChange} />
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">ORGANIZATION</th>
-              <td>
-                <input type="text" name="organisation" id="textfield3" value={serviceData.organisation} onChange={handleChange} />
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">ABOUT-YOU</th>
-              <td>
-                <textarea name="aboutyou" id="textarea" cols="45" rows="5" value={serviceData.aboutyou} onChange={handleChange} required></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">ABOUT ORG</th>
-              <td>
-                <textarea name="aboutorganisation" id="textarea2" cols="45" rows="5" value={serviceData.aboutorganisation} onChange={handleChange} required></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">IMAGES</th>
-              <td>
-                {companyPreview && (
-                  <img src={normalizeDisplayUrl(companyPreview)} alt="Company preview" style={{ width: 120, height: 80, objectFit: 'cover', display: 'block', marginBottom: 8 }} />
-                )}
-                <input type="file" name="images" id="fileField2" accept="image/*" onChange={handleChange} />
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">LOCATION</th>
-              <td>
-                <input type="text" name="location" id="textfield4" value={serviceData.location} onChange={handleChange} />
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">WEBSITE</th>
-              <td>
-                <input type="url" name="website" id="textfield5" value={serviceData.website} onChange={handleChange} required placeholder="https://example.com" />
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">ADDRESS</th>
-              <td>
-                <input type="text" name="address" id="addressField" value={serviceData.address} onChange={handleChange} required minLength="3" />
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">EMAIL</th>
-              <td>
-                <input type="email" name="email" id="textfield6" value={serviceData.email} onChange={handleChange} required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}" title="Enter a valid email address, for example email@gmail.com." />
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">PHONE</th>
-              <td>
-                <input type="tel" name="phone" id="textfield7" value={serviceData.phone} onChange={handleChange} required pattern="[0-9]{10}" maxLength="10" inputMode="numeric" title="Phone number must contain exactly 10 digits." />
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">PHOTO</th>
-              <td>
-                {profilePreview && (
-                  <img src={normalizeDisplayUrl(profilePreview)} alt="Profile preview" style={{ width: 80, height: 80, objectFit: 'cover', display: 'block', marginBottom: 8, borderRadius: 8 }} />
-                )}
-                <input type="file" name="profile_photo" id="fileField3" accept="image/*" onChange={handleChange} />
-              </td>
-            </tr>
-            <tr>
-              <th colSpan="2" scope="row">
-                <input type="submit" name="button" id="button" value="Update" />
-              </th>
-            </tr>
-          </tbody>
-        </table>
-      </form> */}
       <Footer />
     </>
   );

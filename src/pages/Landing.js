@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios";
+import API_URL from "../api";
 const Landing=()=>
 
 {
@@ -16,12 +17,11 @@ const Landing=()=>
     };
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await axios.post('http://localhost:4000/login',serviceData);
-        console.log(response.data,'sssssssssssssssss');
-        if(response.data.status == 'ok')
-        {
-        var id = response.data.id;
-          console.log(id,'jjhjh')
+        const response = await axios.post(`${API_URL}/login`, serviceData);
+        console.log(response.data, 'sssssssssssssssss');
+        if (response.data.status == 'ok') {
+            var id = response.data.id;
+            console.log(id, 'jjhjh')
            localStorage.setItem('id', id);
            localStorage.setItem('type', response.data.type);
            console.log(localStorage.getItem('id'),'sdsdsdsdsd',localStorage.getItem('type'));

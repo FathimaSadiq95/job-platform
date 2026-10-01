@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";  
 
 const Viewprovider = () => {
   const [providerData, setProviderData] = useState([]);
@@ -11,7 +12,7 @@ const Viewprovider = () => {
   useEffect(() => {
     const getService = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/Viewprovider");
+        const response = await axios.get(`${API_URL}/Viewprovider`);
         setProviderData(response.data.data);
       } catch (error) {
         console.error(error);

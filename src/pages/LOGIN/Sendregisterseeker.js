@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Header from "../LOGIN/Header";
 import Footer from "../LOGIN/Footer";
+import API_URL from "../../api";
 
 const Sendregisterseeker=()=>
 {
@@ -60,7 +61,7 @@ const[serviceData,setserviceData]=useState({
       Object.entries(serviceData).forEach(([name, value]) => {
         formData.append(name, value);
       });
-      await axios.post('http://localhost:4000/Sendregisterseeker', formData)
+      await axios.post(`${API_URL}/Sendregisterseeker`, formData)
         console.log(serviceData);
         alert('Registered Successfully!!')
         resetForm();

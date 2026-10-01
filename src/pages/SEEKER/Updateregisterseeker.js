@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 const Updateregisterseeker=()=>
 {
       const[serviceData,setserviceData]=useState({
@@ -25,7 +26,7 @@ const Updateregisterseeker=()=>
 
       const fetchData = async () => {
         try {
-          const response = await axios.get(`http://localhost:4000/getseekerdata/${id}`);
+          const response = await axios.get(`${API_URL}/getseekerdata/${id}`);
           setserviceData(response.data);
 
           console.log("Response:", response.data);
@@ -48,7 +49,7 @@ const Updateregisterseeker=()=>
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          await axios.post('http://localhost:4000/Updateregisterseeker', serviceData);
+          await axios.post(`${API_URL}/Updateregisterseeker`, serviceData);
           alert('Profile updated successfully');
         } catch (error) {
           console.error('Error updating seeker profile:', error);

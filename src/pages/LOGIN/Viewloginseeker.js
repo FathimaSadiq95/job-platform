@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
+import API_URL from "../../api";
 
 const Viewaloginseeker = () => {
   const [seekerData, setSeekerData] = useState([]);
@@ -11,7 +12,7 @@ const Viewaloginseeker = () => {
   useEffect(() => {
     const getService = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/Viewapprovedseeker");
+        const response = await axios.get(`${API_URL}/Viewapprovedseeker`);
         console.log("approved seeker", response.data.data);
         setSeekerData(response.data.data);
       } catch (error) {

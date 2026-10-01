@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
+import API_URL from '../../api';
 
 const Sendregisterprovider = () => {
   const [serviceData, setserviceData] = useState({
@@ -54,7 +55,7 @@ const Sendregisterprovider = () => {
       }
     });
 
-    await axios.post('http://localhost:4000/Sendregisterprovider', formData, {
+    await axios.post(`${API_URL}/Sendregisterprovider`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' }
     });
 

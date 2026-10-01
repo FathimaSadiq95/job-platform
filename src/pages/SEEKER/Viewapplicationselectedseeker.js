@@ -2,6 +2,7 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
+import API_URL from "../../api";
 
 const Viewapplicationselectedseeker=()=>
 {
@@ -15,7 +16,7 @@ const Viewapplicationselectedseeker=()=>
                           return;
                         }
 
-                        const response = await axios.get(`http://localhost:4000/Viewapplicationseeker/${seekerId}`);
+                        const response = await axios.get(`${API_URL}/Viewapplicationseeker/${seekerId}`);
                           console.log('application',response.data.data)
                           setapplicationData(response.data.data);
                       }

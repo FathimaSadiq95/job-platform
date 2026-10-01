@@ -1,5 +1,7 @@
 import { useState } from "react"
 import axios from "axios";
+import API_URL from "../../api";
+
  const Header=()=>
 
 {
@@ -10,7 +12,7 @@ import axios from "axios";
    const normalizeDisplayUrl = (path) => {
      if (!path) return '';
      if (path.startsWith('http')) return path;
-     return `http://localhost:4000/${path.replace(/^\//, '')}`;
+     return `${API_URL}/${path.replace(/^\//, '')}`;
    };
 
    const handleProfileClick = async () => {
@@ -25,7 +27,7 @@ import axios from "axios";
      try {
        for (const providerId of providerIds) {
          try {
-           const response = await axios.get(`http://localhost:4000/getproviderdata/${providerId}`);
+           const response = await axios.get(`${API_URL}/getproviderdata/${providerId}`);
            if (response.data) {
              setProviderProfile(response.data);
              break;

@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 
 const Viewapplicationseeker=()=>
 {
@@ -24,7 +25,7 @@ const Viewapplicationseeker=()=>
                     return;
                   }
 
-                  const response = await axios.get(`http://localhost:4000/Viewapplicationseeker/${seekerId}`);
+                  const response = await axios.get(`${API_URL}/Viewapplicationseeker/${seekerId}`);
                         console.log('application',response.data.data)
                         setapplicationData(response.data.data);
                     }

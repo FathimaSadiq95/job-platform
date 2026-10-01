@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../ADMIN/Header";
 import Footer from "../ADMIN/Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 
 const getProviderImageUrl = (imagePath) => normalizeImageUrl(imagePath);
 
@@ -14,7 +15,7 @@ const Viewfeedbackprovider = () => {
   useEffect(() => {
     const getFeedback = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/Viewfeedbackprovider");
+        const response = await axios.get(`${API_URL}/Viewfeedbackprovider`);
         console.log("feedback data", response.data.data);
         setFeedbackData(response.data.data);
       } catch (error) {

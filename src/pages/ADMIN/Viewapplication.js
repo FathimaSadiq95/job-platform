@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 
 const Viewapplication = () => {
   const [applicationData, setApplicationData] = useState([]);
@@ -15,7 +16,7 @@ const Viewapplication = () => {
   useEffect(() => {
     const getService = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/Viewapplication");
+        const response = await axios.get(`${API_URL}/Viewapplication`);
         setApplicationData(response.data.data);
       } catch (error) {
         console.error(error);

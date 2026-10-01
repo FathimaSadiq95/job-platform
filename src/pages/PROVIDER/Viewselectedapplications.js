@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 
 const Viewselectedapplications = () => {
   const [applicationData, setApplicationData] = useState([]);
@@ -11,7 +12,7 @@ const Viewselectedapplications = () => {
   useEffect(() => {
     const getService = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/Viewselectedapplications/${localStorage.getItem("uid")}`);
+        const response = await axios.get(`${API_URL}/Viewselectedapplications/${localStorage.getItem("uid")}`);
         setApplicationData(response.data.data);
       } catch (error) {
         console.error(error);

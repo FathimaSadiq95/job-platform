@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
 import { useParams } from "react-router-dom";
+import API_URL from '../../api';
 
 const Editjobprovider=()=>
 {
@@ -30,7 +31,7 @@ const Editjobprovider=()=>
               console.log("useEffect called");
               const fetchData = async () => {
                 try {
-                  const response = await axios.get(`http://localhost:4000/getupdatejob/${id}`);
+                  const response = await axios.get(`${API_URL}/getupdatejob/${id}`);
                   setserviceData(response.data);
         
                   console.log("Response:", response.data);
@@ -54,7 +55,7 @@ const Editjobprovider=()=>
   
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/Updatejob/' + id,serviceData)
+        axios.post(`${API_URL}/Updatejob/${id}`, serviceData)
         console.log(serviceData);
         alert('Service Updated Successfully!!')
         window.location.href='/Viewjobprovider';

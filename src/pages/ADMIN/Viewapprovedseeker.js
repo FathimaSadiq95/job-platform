@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
+import API_URL from "../../api";
 
 const Viewapprovedseeker = () => {
   const [seekerData, setSeekerData] = useState([]);
@@ -12,7 +13,7 @@ const Viewapprovedseeker = () => {
   useEffect(() => {
     const getService = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/Viewapprovedseeker");
+        const response = await axios.get(`${API_URL}/Viewapprovedseeker`);
         console.log("approved seeker", response.data.data);
         setSeekerData(response.data.data);
       } catch (error) {

@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
+import API_URL from "../../api";
 const Viewselectedlist=()=>
 {
   const[seekerData, setseekerData ] = useState([]);
     useEffect(() => {
         const getService = async() => {
             try{
-                const response = await axios.get('http://localhost:4000/Viewseeker');
+                const response = await axios.get(`${API_URL}/Viewseeker`);
                 console.log('hujhhjhjhjh',response.data)
                 setseekerData(response.data.data);
             }
