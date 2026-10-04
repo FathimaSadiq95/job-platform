@@ -1,0 +1,27 @@
+{
+  "general": {
+    "hello": "Hello! How can I help you with your career, interview preparation, or job search?",
+    "python": "Python is a high-level programming language widely used for web development, data analysis, machine learning, automation, and artificial intelligence.",
+    "mern": "MERN is a JavaScript-based full-stack technology stack consisting of MongoDB, Express.js, React, and Node.js.",
+    "resume": "A resume is a document that summarizes your education, skills, projects, experience, and achievements for job applications."
+  },
+
+  "career": {
+    "developer": "To build a software development career, focus on programming fundamentals, data structures and algorithms, databases, APIs, Git, and one or more development technologies. Building real projects is also important.",
+    "frontend": "For frontend development, learn HTML, CSS, JavaScript, responsive design, Git, and a framework such as React.",
+    "backend": "For backend development, learn a programming language, databases, REST APIs, authentication, server-side development, Git, and deployment.",
+    "fullstack": "For full-stack development, learn both frontend and backend development along with databases, APIs, authentication, Git, and deployment."
+  },
+
+  "interview": {
+    "technical": "For a technical interview, prepare programming fundamentals, data structures and algorithms, OOP, databases, APIs, Git, and questions related to your projects.",
+    "hr": "For an HR interview, prepare a clear self-introduction, your strengths and areas for improvement, your project experience, career goals, and common behavioral questions.",
+    "project": "Be ready to explain your project clearly, including the problem it solves, technologies used, your contribution, database design, important features, challenges, and how you solved them."
+  },
+
+  "job": {
+    "search": "Our platform provides job opportunities for job seekers. Please sign in or register to view available positions and apply.",
+    "internship": "For internships, look for opportunities on job portals, company career pages, LinkedIn, and through college networks. A portfolio with practical projects can help demonstrate your skills.",
+    "fresher": "As a fresher, focus on building practical projects, maintaining a good resume and GitHub profile, preparing for interviews, and applying consistently to entry-level roles."
+  }
+}

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import CareerAssistant from './components/CareerAssistant/CareerAssistant';
 import ViewApprovedJob from './pages/ADMIN/ViewApprovedJob';
 import Viewfeedbackseeker from './pages/ADMIN/Viewfeedbackseeker';
 import Viewapprovedprovider from './pages/ADMIN/Viewapprovedprovider';
@@ -58,44 +59,58 @@ const ScrollToHash = () => {
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const AppContent = () => {
+  const location = useLocation();
+
+  const isAdminPage = location.pathname.toLowerCase().includes("admin");
+
+  return (
+    <>
+      <ScrollToHash />
+
+      <Routes>
+        <Route path='ViewApprovedJob' element={<ViewApprovedJob />} />
+        <Route path='Viewfeedbackseeker' element={<Viewfeedbackseeker />} />
+        <Route path='Viewapprovedprovider' element={<Viewapprovedprovider />} />
+        <Route path='Viewfeedbackprovider' element={<Viewfeedbackprovider />} />
+        <Route path='Viewapplication' element={<Viewapplication />} />
+        <Route path='Viewseeker' element={<Viewseeker />} />
+        <Route path='Viewprovider' element={<Viewprovider />} />
+        <Route path='Viewjob' element={<Viewjob />} />
+        <Route path='Viewapprovedseeker' element={<Viewapprovedseeker />} />
+        <Route path='Sendfeedback' element={<Sendfeedback />} />
+        <Route path='Sendregisterjob' element={<Sendregisterjob />} />
+        <Route path='Viewapplicationprovider' element={<Viewapplicationprovider />} />
+        <Route path='Sendregisterprovider' element={<Sendregisterprovider />} />
+        <Route path='Sendupdateprovider' element={<Sendupdateprovider />} />
+        <Route path='Viewjobprovider' element={<Viewjobprovider />} />
+        <Route path='Viewselectedlist' element={<Viewselectedlist />} />
+        <Route path='Sendfeedbackseeker' element={<Sendfeedbackseeker />} />
+        <Route path='Sendregisterseeker' element={<Sendregisterseeker />} />
+        <Route path='Updateregisterseeker' element={<Updateregisterseeker />} />
+        <Route path='Viewapplicationseeker' element={<Viewapplicationseeker />} />
+        <Route path='Viewapplicationselectedseeker' element={<Viewapplicationselectedseeker />} />
+        <Route path='Viewjobseeker' element={<Viewjobseeker />} />
+        <Route path='AdminHome' element={<AdminHome />} />
+        <Route path='SeekerHome' element={<SeekerHome />} />
+        <Route path='ProviderHome' element={<ProviderHome />} />
+        <Route path='Viewloginseeker' element={<Viewloginseeker />} />
+        <Route path='Viewloginfeedbackprovider' element={<Viewloginfeedbackprovider />} />
+        <Route path='Viewloginfeedbackseeker' element={<Viewloginfeedbackseeker />} />
+        <Route path='Viewloginprovider' element={<Viewloginprovider />} />
+        <Route path='Editjobprovider/:id' element={<Editjobprovider />} />
+        <Route path='Viewselectedapplications' element={<Viewselectedapplications />} />
+        <Route path='' element={<Login />} />
+
+      </Routes>
+
+      {!isAdminPage && <CareerAssistant />}
+    </>
+  );
+};
 root.render(
   <Router>
-    <ScrollToHash />
-    <Routes>
-      <Route path='ViewApprovedJob' element={<ViewApprovedJob />} />
-      <Route path='Viewfeedbackseeker' element={<Viewfeedbackseeker />} />
-      <Route path='Viewapprovedprovider' element={<Viewapprovedprovider/>}/>
-      <Route path='Viewfeedbackprovider' element={<Viewfeedbackprovider/>}/>
-      <Route path='Viewapplication' element={<Viewapplication/>}/>
-      <Route path='Viewseeker' element={<Viewseeker/>}/>
-      <Route path='Viewprovider' element={<Viewprovider/>}/>
-      <Route path='Viewjob' element={<Viewjob/>}/>
-      <Route path='Viewapprovedseeker' element={<Viewapprovedseeker/>}/>
-      <Route path='Sendfeedback' element={<Sendfeedback/>}/>
-      <Route path='Sendregisterjob' element={<Sendregisterjob/>}/>
-      <Route path='Viewapplicationprovider' element ={<Viewapplicationprovider/>}/>
-      <Route path='Sendregisterprovider' element={<Sendregisterprovider/>}/>
-      <Route path='Sendupdateprovider' element={<Sendupdateprovider/>}/>
-      <Route path='Viewjobprovider' element={<Viewjobprovider/>}/>
-      <Route path='Viewselectedlist' element={<Viewselectedlist/>}/>
-      <Route path='Sendfeedbackseeker' element={<Sendfeedbackseeker/>}/>
-      <Route path='Sendregisterseeker' element={<Sendregisterseeker/>}/>
-      <Route path='Updateregisterseeker' element={<Updateregisterseeker/>}/>
-      <Route path='Viewapplicationseeker' element={<Viewapplicationseeker/>}/>
-      <Route path='Viewapplicationselectedseeker' element={<Viewapplicationselectedseeker/>}/>
-      <Route path='Viewjobseeker'element={<Viewjobseeker/>}/>
-      <Route path='AdminHome' element={<AdminHome/>}/>
-      <Route path='SeekerHome' element={<SeekerHome/>}/>
-      <Route path='ProviderHome' element={<ProviderHome/>}/>
-      <Route path='Viewloginseeker' element={<Viewloginseeker/>}/>
-      <Route path='Viewloginfeedbackprovider' element={<Viewloginfeedbackprovider/>}/>
-      <Route path='Viewloginfeedbackseeker' element={<Viewloginfeedbackseeker/>}/>
-      <Route path='Viewloginprovider' element={<Viewloginprovider/>}/>
-      <Route path='Editjobprovider/:id' element={<Editjobprovider/>}/>
-      <Route path='Viewselectedapplications' element={<Viewselectedapplications/>}/>
-      <Route path='' element={<Login/>}/>
-     
-    </Routes>
+    <AppContent />
   </Router>
 );
 

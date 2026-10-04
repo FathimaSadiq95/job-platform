@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { normalizeImageUrl } from "../../utils/imageUtils";
 import API_URL from "../../api";
+
 const SeekerHome=()=>
 {
   const [jobData, setJobData] = useState([]);
@@ -78,6 +79,7 @@ const SeekerHome=()=>
       {jobData.length === 0 && <div className="bg-white p-5 text-center shadow-sm"><p className="text-muted mb-0">No approved jobs are available right now.</p></div>}
     </div>
   </section>
+
   <Footer/>
   </>);
 }

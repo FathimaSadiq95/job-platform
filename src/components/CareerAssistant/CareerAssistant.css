@@ -1,0 +1,133 @@
+.career-assistant {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 350px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.68);
+    overflow: hidden;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+}
+
+.career-assistant-header {
+    background: #89ba16;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.career-assistant-body {
+    height: 350px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f8f9fa;
+}
+
+.chat-message {
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.chat-message.bot {
+    justify-content: flex-start;
+}
+
+.chat-bubble {
+    max-width: 80%;
+    padding: 10px 13px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.chat-message.user .chat-bubble {
+    background: #6f970f;
+    color: white;
+}
+
+.chat-message.bot .chat-bubble {
+    background: white;
+    color: #333;
+    border: 1px solid #e5e5e5;
+}
+
+.career-assistant-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background: white;
+}
+
+.career-assistant-input input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 9px;
+    outline: none;
+}
+
+.career-assistant-input button {
+    margin-left: 8px;
+    border: none;
+    background: #89ba16;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.career-assistant-input button:hover {
+    background: #6f970f;
+}
+
+.career-assistant-toggle {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #fff568;
+    color: #333;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.career-assistant-toggle:hover {
+    background: #89ba16;
+    color: white;
+}
+@keyframes assistantPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.career-assistant-toggle {
+    animation: assistantPulse 2s ease-in-out infinite;
+}
+
+.career-assistant-toggle:hover {
+    animation: none;
+    transform: scale(1.05);
+}

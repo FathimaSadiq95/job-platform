@@ -13,6 +13,9 @@ const[serviceData,setserviceData]=useState({
             photo:'',
             link:'',
             about:'',
+            qualification:'',
+            skills:'',
+            experience:'',
             email:'',
             phone:'',
             password:'',
@@ -76,6 +79,9 @@ const[serviceData,setserviceData]=useState({
             photo:'',
             link:'',
             about:'',
+            qualification:'',
+            skills:'',
+            experience:'',
             email:'',
             phone:'',
             password:'',
@@ -94,6 +100,9 @@ const[serviceData,setserviceData]=useState({
             <div className="row"><div className="col-md-6 form-group mb-3"><label htmlFor="cv">CV</label><input type="file" name="cv" id="cv" className="form-control" onChange={handleFileChange} required /></div><div className="col-md-6 form-group mb-3"><label htmlFor="photo">Photo</label><input type="file" name="photo" id="photo" className="form-control" accept="image/*" onChange={handleFileChange} required /></div></div>
             <div className="form-group mb-3"><label htmlFor="link">Portfolio Link</label><input type="url" name="link" id="link" className="form-control" onChange={handleChange} required placeholder="https://example.com" /></div>
             <div className="form-group mb-3"><label htmlFor="about">About You</label><textarea name="about" id="about" className="form-control" rows="4" onChange={handleChange} required /></div>
+            <div className="form-group mb-3"><label htmlFor="qualification">Qualification</label><input type="text" name="qualification" id="qualification" className="form-control" onChange={handleChange} required /></div>
+            <div className="form-group mb-3"><label htmlFor="skills">Skills</label><input type="text" name="skills" id="skills" className="form-control" onChange={handleChange} required /></div>
+            <div className="form-group mb-3"><label htmlFor="experience">Experience</label><input type="text" name="experience" id="experience" className="form-control" onChange={handleChange}  /></div>
             <div className="row"><div className="col-md-6 form-group mb-3"><label htmlFor="email">Email</label><input type="email" name="email" id="email" className="form-control" onChange={handleChange} required /></div><div className="col-md-6 form-group mb-3"><label htmlFor="phone">Phone</label><input type="tel" name="phone" id="phone" className="form-control" onChange={handleChange} required pattern="[0-9]{10}" maxLength="10" inputMode="numeric" title="Phone number must contain exactly 10 digits." /></div></div>
             <div className="row"><div className="col-md-6 form-group mb-3"><label htmlFor="password">Password</label><input type="password" name="password" id="password" className="form-control" onChange={handleChange} required minLength="8" /></div><div className="col-md-6 form-group mb-3"><label htmlFor="confirm_password">Confirm Password</label><input type="password" name="confirm_password" id="confirm_password" className="form-control" onChange={handleChange} required minLength="8" /></div></div>
             <button type="submit" className="btn btn-primary btn-block mt-3">Create Account</button>
