@@ -73,7 +73,7 @@ const Viewseeker = () => {
                     <strong>{seeker.dateofbirth}</strong>
                   </div>
                   <div className="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                    <span className="icon-room"></span> {seeker.email}
+                    <span className="icon-room"></span> {seeker.location}
                   </div>
                   <div className="job-listing-meta">
                    <button onClick={(event) => { event.stopPropagation(); handleApprove(seeker.logindata._id); }}

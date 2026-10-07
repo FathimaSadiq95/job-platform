@@ -19,6 +19,8 @@ const Updateregisterseeker=()=>
                 email:'',
                 phone:'',
                 date:'',
+                jobtype:'',
+                location:''
         });
 
 
@@ -68,13 +70,23 @@ const Updateregisterseeker=()=>
           <form onSubmit={handleSubmit}>
             <div className="form-group mb-3"><label htmlFor="name">Name</label><input type="text" name="name" id="name" className="form-control" value={serviceData.name} onChange={handleChange} required minLength="3" pattern="[A-Za-z]+(?: [A-Za-z]+)*" title="Use at least 3 letters; spaces are allowed." /></div>
             <div className="form-group mb-3"><label htmlFor="dateofbirth">Date of Birth</label><input type="date" name="dateofbirth" id="dateofbirth" className="form-control" value={serviceData.dateofbirth} onChange={handleChange} required /></div>
-            <div className="form-group mb-3"><label htmlFor="link">Portfolio Link</label><input type="url" name="link" id="link" className="form-control" value={serviceData.link} onChange={handleChange} required placeholder="https://example.com" /></div>
+            <div className="form-group mb-3"><label htmlFor="link">Portfolio Link</label><input type="url" name="link" id="link" className="form-control" value={serviceData.link} onChange={handleChange} placeholder="https://example.com" /></div>
             <div className="form-group mb-3"><label htmlFor="about">About You</label><textarea name="about" id="about" className="form-control" rows="4" value={serviceData.about} onChange={handleChange} required /></div>
+            <div className="form-group mb-3"><label htmlFor="location">Location</label><input type="text" name="location" id="location" className="form-control" value={serviceData.location} onChange={handleChange} required /></div>
             <div className="form-group mb-3"><label htmlFor="qualification">Qualification</label><input type="text" name="qualification" id="qualification" className="form-control" value={serviceData.qualification} onChange={handleChange} required /></div>
             <div className="form-group mb-3"><label htmlFor="skills">Skills</label><input type="text" name="skills" id="skills" className="form-control" value={serviceData.skills} onChange={handleChange} required /></div>
             <div className="form-group mb-3"><label htmlFor="experience">Experience</label><input type="text" name="experience" id="experience" className="form-control" value={serviceData.experience} onChange={handleChange} /></div>
             <div className="row"><div className="col-md-6 form-group mb-3"><label htmlFor="email">Email</label><input type="email" name="email" id="email" className="form-control" value={serviceData.email} onChange={handleChange} required /></div><div className="col-md-6 form-group mb-3"><label htmlFor="phone">Phone</label><input type="tel" name="phone" id="phone" className="form-control" value={serviceData.phone} onChange={handleChange} required pattern="[0-9]{10}" maxLength="10" inputMode="numeric" title="Phone number must contain exactly 10 digits." /></div></div>
             <div className="row"><div className="col-md-6 form-group mb-3"><label htmlFor="cv">CV file</label><input type="file" name="cv" id="cv" className="form-control" onChange={handleChange} />{normalizeImageUrl(serviceData.cv) && <a href={normalizeImageUrl(serviceData.cv)} target="_blank" rel="noopener noreferrer">View current CV</a>}</div><div className="col-md-6 form-group mb-3"><label htmlFor="profilephoto">Profile photo</label><input type="file" name="profilephoto" id="profilephoto" className="form-control" accept="image/*" onChange={handleChange} />{normalizeImageUrl(serviceData.profilephoto) && <a href={normalizeImageUrl(serviceData.profilephoto)} target="_blank" rel="noopener noreferrer">View current photo</a>}</div></div>
+            <div className="form-group mb-3">
+              <label htmlFor="jobtype">Job Type</label>
+              <select name="jobtype" id="jobtype" className="form-control" value={serviceData.jobtype} onChange={handleChange} required>
+                <option value="Any">Any</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Contract">Contract</option>
+              </select>
+            </div>
             <button type="submit" className="btn btn-primary btn-block mt-3">Update Profile</button>
           </form>
         </div>

@@ -1,0 +1,55 @@
+
+.search-results-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.search-results-modal {
+  background: #fff;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 30px;
+  position: relative;
+}
+
+.search-results-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.search-results-modal h2 {
+  margin-bottom: 5px;
+}
+
+.search-summary {
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.search-results-list {
+  margin-bottom: 0;
+}
+.search-results-modal .job-listing-position p {
+  color: #000 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}

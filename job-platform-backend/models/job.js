@@ -10,7 +10,8 @@ const dataSchema = new mongoose.Schema({
     from_date : { type : String , required : true},
     due_date : { type : String , required : true},
     salary : { type : String , required : true},
-    status :{type: String, required: true}
+    status :{type: String, required: true},
+    job_type: { type: String, required: true , default: "Full Time"},
 
     // user_id : {type : mongoose.Schema.Types.ObjectId , required : true},
 });

@@ -52,7 +52,7 @@ const Viewapprovedseeker = () => {
                     <strong>{seeker.link}</strong>
                   </div>
                   <div className="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                    <span className="icon-room"></span> {seeker.email}
+                    <span className="icon-room"></span> {seeker.location}
                   </div>
                 </div>
               </li>

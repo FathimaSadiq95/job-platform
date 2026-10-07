@@ -5,8 +5,8 @@ const dataSchema = new mongoose.Schema({
     name: { type: String, required: true },
     dateofbirth: { type: String, required: true },
     cv: { type: String, required: true },
-    profilephoto: { type: String, required: true },
-    link: { type: String, required: true },
+    profilephoto: { type: String, default: "" },
+    link: { type: String, default: "" },
     about: { type: String, required: true },
     qualification: { type: String, default: "" },
     skills: { type: String, default: "" },
@@ -14,6 +14,8 @@ const dataSchema = new mongoose.Schema({
     email: { type: String, required: true },
     phone: { type: String, required: true },
     date: { type: String, required: true },
+    jobtype: { type: String, default: "Any" },
+    location: { type: String, default: "" },
     login_id: { type: mongoose.Schema.Types.ObjectId, required: true },
 });
 

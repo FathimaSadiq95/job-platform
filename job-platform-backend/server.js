@@ -120,7 +120,6 @@ app.get('/getseekerdata/:id', async (req, res) => {
     const id = req.params.id;
     console.log(id, 'iddddddddddddddd')
     const data = await seeker.findOne({ login_id: id })
-    console.log(data, 'dataaaaaaaaaaaaaaa')
     res.status(200).json(data)
 })
 
@@ -135,7 +134,7 @@ app.get('/getproviderdata/:id', async (req, res) => {
     const data = await provider.findOne({
         $or: [{ login_id: objectId }, { _id: objectId }]
     });
-    console.log(data, 'dataaaaaaaaaaaaaaa')
+    // console.log(data, 'dataaaaaaaaaaaaaaa')
     if (!data) {
         return res.status(404).json({ message: 'Provider profile not found' });
     }
@@ -169,7 +168,7 @@ app.get('/Viewapplication', async (req, res) => {
 
     ])
 
-    console.log(data)
+    // console.log(data)
     res.status(200).json({ status: "ok", data: data })
 })
 
@@ -196,7 +195,7 @@ app.get('/ViewApprovedJob', async (req, res) => {
         { $unwind: '$jobdata' },
         { $match: { 'status': 'approve' } }
     ])
-    console.log(data);
+    // console.log(data);
     res.status(200).json({ status: "ok", data: data })
 })
 
@@ -221,7 +220,7 @@ app.get('/Viewapprovedprovider', async (req, res) => {
         { $match: { 'logdata.usertype': 'provider' } }
 
     ])
-    console.log('data', data)
+    // console.log('data', data)
     res.status(200).json({ status: "ok", data: data })
 })
 
@@ -235,7 +234,7 @@ app.get('/Viewapprovedseeker', async (req, res) => {
         { $match: { 'logindata.usertype': 'seeker' } }
 
     ])
-    console.log(data, 'ioioi')
+    // console.log(data, 'ioioi')
     res.status(200).json({ status: "ok", data: data })
 })
 
@@ -273,14 +272,7 @@ app.get('/Viewfeedbackseeker', async (req, res) => {
     const data = await feedback_seeker.aggregate([
         { $lookup: { from: 'seekers', localField: 'seeker_id', foreignField: '_id', as: 'sdata' } },
         { $unwind: '$sdata' }])
-    console.log(data)
-    res.status(200).json({ status: "ok", data: data })
-})
-app.get('/Viewjob/:uid', async (req, res) => {
-    const uid = req.params.uid;
-    const pid = new ObjectId(uid);
-    const data = await job.find({ provider_id: uid })
-    console.log(data)
+    // console.log(data)
     res.status(200).json({ status: "ok", data: data })
 })
 
@@ -322,6 +314,7 @@ app.get('/Viewseeker', async (req, res) => {
         { $match: { 'logindata.usertype': 'pending' } }
     ])
     res.status(200).json({ status: "ok", data: data })
+    console.log(data, 'seeker data')
 })
 
 app.post('/profile', async (req, res) => {
@@ -351,11 +344,16 @@ app.post('/Sendfeedback/:uid', async (req, res) => {
 
 app.post('/Sendregisterjob/:id', async (req, res) => {
     try {
-        const { post, about, requirements, exp_required, provider_id, from_date, due_date, salary, status, no_of_vacancies } = req.body;
+        const { post, about, requirements, exp_required, provider_id, from_date, due_date, salary, status, no_of_vacancies, jobtype } = req.body;
         const providerId = req.params.id;
         //const seekerId = req.params.uid;
         // const newpid = new ObjectId(providerId);
-        const data = await job({ post, about, requirements, exp_required, provider_id: providerId, from_date, due_date, salary: '0', status: 'pending', no_of_vacancies });
+        const data = await job({
+            post, about,
+            requirements, exp_required, provider_id: providerId,
+            from_date, due_date, salary: '0', status: 'pending',
+            no_of_vacancies, jobtype
+        });
         await data.save();
         console.log('Job Registered Successfully!!');
     }
@@ -542,7 +540,7 @@ app.post('/Sendregisterseeker', upload.fields([
     { name: 'cv', maxCount: 1 }
 ]), async (req, res) => {
     try {
-        const { name, DOB, link, about, email, phone, password, confirm_password } = req.body;
+        const { name, DOB, link, about, email, phone, password, confirm_password, jobtype ,location } = req.body;
         const photo = req.files?.photo?.[0];
         const cv = req.files?.cv?.[0];
         const log = await login({ username: email, password: confirm_password, usertype: 'pending' });
@@ -561,6 +559,8 @@ app.post('/Sendregisterseeker', upload.fields([
             skills: req.body.skills || '',
             experience: req.body.experience || '',
             phone,
+            jobtype: jobtype || 'Any',
+            location: req.body.location || '',
             login_id: log._id
         });
         await data.save();
@@ -574,7 +574,7 @@ app.post('/Sendregisterseeker', upload.fields([
 
 app.post('/Updateregisterseeker', async (req, res) => {
     try {
-        const { login_id, name, dateofbirth, cv, profilephoto, link, about, email, phone, qualification, skills, experience } = req.body;
+        const { login_id, name, dateofbirth, cv, profilephoto, link, about, email, phone, qualification, skills, experience, jobtype ,location } = req.body;
 
         if (!login_id) {
             return res.status(400).json({ status: "error", message: "login_id is required" });
@@ -582,7 +582,7 @@ app.post('/Updateregisterseeker', async (req, res) => {
 
         const updatedSeeker = await seeker.findOneAndUpdate(
             { login_id },
-            { name, dateofbirth, cv, profilephoto, link, about, qualification, skills, experience, email, phone },
+            { name, dateofbirth, cv, profilephoto, link, about, qualification, skills, experience, email, phone, jobtype , location },
             { new: true, runValidators: true }
         );
 
@@ -1022,6 +1022,179 @@ app.get('/api/ai/jobs', async (req, res) => {
         res.status(500).json({
             status: 'error',
             message: 'Unable to fetch job data'
+        });
+    }
+});
+
+// Search button 
+app.get('/api/search-jobs', async (req, res) => {
+    try {
+        const { keyword = '', region = 'Anywhere', jobType = 'Any' } = req.query;
+
+        const searchKeyword = keyword.trim();
+        const searchRegion = region.trim();
+        const searchJobType = jobType.trim();
+
+        const matchConditions = {
+            status: 'approve'
+        };
+
+        // Search Job Title OR Company Name
+        if (searchKeyword) {
+            const normalizedKeyword = searchKeyword
+                .toLowerCase()
+                .replace(/\bdevelopment\b/g, 'developer')
+                .replace(/\bdevelopers\b/g, 'developer')
+                .trim();
+
+            const keywordRegex = new RegExp(normalizedKeyword, 'i');
+
+            matchConditions.$or = [
+                { post: keywordRegex },
+                { 'jobdata.organisation': keywordRegex }
+            ];
+        }
+
+        // Search Region
+        if (searchRegion && searchRegion.toLowerCase() !== 'anywhere') {
+            matchConditions['jobdata.location'] = new RegExp(searchRegion, 'i');
+        }
+
+        // Search Job Type
+        if (searchJobType && searchJobType.toLowerCase() !== 'any') {
+            matchConditions.job_type = searchJobType;
+        }
+
+        const data = await job.aggregate([
+            {
+                $lookup: {
+                    from: 'providers',
+                    localField: 'provider_id',
+                    foreignField: '_id',
+                    as: 'jobdata'
+                }
+            },
+            {
+                $unwind: '$jobdata'
+            },
+            {
+                $match: matchConditions
+            }
+        ]);
+
+        console.log('Search:', {
+            keyword: searchKeyword,
+            region: searchRegion,
+            jobType: searchJobType,
+            results: data.length
+        });
+
+        res.status(200).json({
+            status: 'ok',
+            data: data
+        });
+
+    } catch (error) {
+        console.error('Job search error:', error);
+
+        res.status(500).json({
+            status: 'error',
+            message: 'Unable to search jobs'
+        });
+    }
+});
+
+app.get('/api/search-candidates', async (req, res) => {
+    try {
+        const {
+            keyword = '',
+            region = 'Anywhere',
+            jobType = 'Any'
+        } = req.query;
+
+        const searchKeyword = keyword.trim();
+        const searchRegion = region.trim();
+        const searchJobType = jobType.trim();
+
+        const matchConditions = {
+            'logindata.usertype': 'seeker'
+        };
+
+        // Qualification / Skills search
+        if (searchKeyword) {
+            const keywordRegex = new RegExp(searchKeyword, 'i');
+
+            matchConditions.$or = [
+                { qualification: keywordRegex },
+                { skills: keywordRegex },
+                { experience: keywordRegex },
+                { about: keywordRegex }
+            ];
+        }
+
+        // Location filter
+        if (
+            searchRegion &&
+            searchRegion.toLowerCase() !== 'anywhere'
+        ) {
+            matchConditions.location = new RegExp(searchRegion, 'i');
+        }
+
+        // Preferred job type filter
+        if (
+            searchJobType &&
+            searchJobType.toLowerCase() !== 'any'
+        ) {
+            matchConditions.jobtype = searchJobType;
+        }
+
+        const data = await seeker.aggregate([
+            {
+                $lookup: {
+                    from: 'logins',
+                    localField: 'login_id',
+                    foreignField: '_id',
+                    as: 'logindata'
+                }
+            },
+            {
+                $unwind: '$logindata'
+            },
+            {
+                $match: matchConditions
+            }
+        ]);
+
+        console.log('Candidate Search:', {
+            keyword: searchKeyword,
+            region: searchRegion,
+            jobType: searchJobType,
+            results: data.length
+        });
+
+        const candidates = data.map((item) => ({
+            _id: item._id,
+            name: item.name,
+            qualification: item.qualification || '',
+            skills: item.skills || '',
+            experience: item.experience || '',
+            about: item.about || '',
+            location: item.location || '',
+            jobtype: item.jobtype || 'Any',
+            profilephoto: item.profilephoto || ''
+        }));
+
+        res.status(200).json({
+            status: 'ok',
+            data: candidates
+        });
+
+    } catch (error) {
+        console.error('Candidate search error:', error);
+        console.log("Candidate results:", response.data.data);
+        res.status(500).json({
+            status: 'error',
+            message: 'Unable to search candidates'
         });
     }
 });

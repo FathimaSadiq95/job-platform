@@ -19,7 +19,8 @@ const Sendregisterjob=()=>
             from_date:'',
             due_date:'',
             salary:'',
-            no_of_vacancies:''
+            no_of_vacancies:'',
+            job_type:'Full Time'
     });
 
     const handleChange = (e) => {
@@ -47,7 +48,9 @@ const Sendregisterjob=()=>
             requirements:'',
             exp_required :'',
             from_date:'',
-            due_date:''
+            due_date:'',
+            job_type:'Full Time',
+            salary:''
 
         });
     };
@@ -94,6 +97,18 @@ const Sendregisterjob=()=>
                     <label htmlFor="due_date">Due Date</label>
                     <input type="date" name="due_date" id="due_date" className="form-control" min={tomorrowString} onChange={handleChange} required />
                   </div>
+                </div>
+                <div className="col-md-6 form-group mb-3">
+                  <label htmlFor="salary">Salary</label>
+                  <input type="text" name="salary" id="salary" className="form-control" onChange={handleChange} minLength="3" pattern="[A-Za-z0-9]+(?: [A-Za-z0-9]+)*" title="Use at least 3 characters; spaces are allowed between words." />
+                </div>
+                <div className="col-md-6 form-group mb-3">
+                  <label htmlFor="job_type">Job Type</label>
+                  <select name="job_type" id="job_type" className="form-control" onChange={handleChange} required>
+                    <option value="Full Time">Full Time</option>
+                    <option value="Part Time">Part Time</option>
+                    <option value="Internship">Internship</option>
+                  </select>
                 </div>
                 <button type="submit" className="btn btn-primary btn-block mt-3">Submit Job</button>
               </form>

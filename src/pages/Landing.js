@@ -133,7 +133,7 @@ return( <>
         <div className="row align-items-center justify-content-center">
           <div className="col-md-12">
             <div className="mb-5 text-center">
-              <h1 className="text-white font-weight-bold">The Easiest Way To Get Your Dream Job</h1>
+              <h1 className="text-white font-weight-bold">Connect with the right opportunities. Discover the right talent</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate est, consequuntur perferendis.</p>
             </div>
             <form method="post" className="search-jobs-form">
